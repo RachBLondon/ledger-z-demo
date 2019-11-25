@@ -38,7 +38,7 @@ export default class App extends Component {
     }
 
     return (
-      <div style={{width : '364px', margin : 'auto', paddingTop : '10%', textAlign : "center"}}>
+      <div style={{width : '364px', margin : 'auto', paddingTop : '5%', textAlign : "center"}}>
         <h1>Ledger Z ChatBox</h1>
         {this.state.space && (
           <ChatBox
