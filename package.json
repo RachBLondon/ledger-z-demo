@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "3box": "^1.13.1",
+    "3box": "^1.13.2",
+    "3box-chatbox-react": "0.0.1-beta.12",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",

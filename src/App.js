@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Box from "3box";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ChatBox from '3box-chatbox-react';
 
 const getThreeBox = async (address) => {
   const profile = await Box.getProfile(address);
@@ -24,16 +24,9 @@ export default class App extends Component {
   async componentDidMount() {
     await this.getAddressFromMetaMask();
     if (this.state.accounts) {
-      //using the address saved in getAddressFromMetaMask func
-      // open 3Box buy authenticating a user https://docs.3box.io/build/web-apps/auth/3box
-      // This method will trigger the users ETH wallet  to sign a message
-      // Once the user has approved, they can update, decrypt, and interact  
-      // with their 3Box profile store.
-      const box = await Box.openBox(this.state.accounts[0], window.ethereum);
-      this.setState({box});
-      // Sync 3Box
-      await box.syncDone
-      console.log("3Box synced"); 
+      //Demo goes here
+
+
     }
   }
   render() {
@@ -43,29 +36,9 @@ export default class App extends Component {
     }
 
     return (
-      <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-            </ul>
-          </nav>
 
-          <Switch>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
         </div>
-      </Router>
     );
   }
 }
